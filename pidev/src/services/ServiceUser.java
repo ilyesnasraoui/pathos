@@ -92,7 +92,7 @@ public class ServiceUser implements IService<user>{
          
                 while(rs2.next())
                 { if (rs2.getInt("count(*)")>0){
-                    System.out.println(rs2.getInt("count(*)"));
+                    
                 System.out.println("you logged as salle ");}
                  else
                 {System.out.println("you logged as a person ");}

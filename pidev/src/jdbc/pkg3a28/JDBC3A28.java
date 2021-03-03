@@ -7,6 +7,7 @@ package jdbc.pkg3a28;
 
 import Entités.Person;
 import Entités.Personne;
+import Entités.Planning;
 import Entités.Salle;
 import Entités.SalleAccount;
 import Entités.user;
@@ -20,6 +21,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import services.ServicePerson;
 import services.ServicePersonne;
+import services.ServicePlanning;
 import services.ServiceSalle;
 import services.ServiceSalleAccount;
 import services.ServiceUser;
@@ -140,7 +142,16 @@ Logger.getLogger(JDBC3A28.class.getName()).log(Level.SEVERE, null, ex);
 }*/
 SalleAccount s= new SalleAccount(4,4,"baba","baba","baba");
 ServiceSalleAccount ssa= new ServiceSalleAccount();
+Planning p= new Planning(3,3,3,3,3,3,3,"2h30");
+ServicePlanning sp= new ServicePlanning();
+sp.update(p);
+List<Planning> l = new ArrayList<Planning>();
+l = sp.read();
+for( Planning pp : l){
+System.out.println(pp.toString());
+}
 //ssa.add(s);
+   
 
 
 ServiceUser u= new ServiceUser();
