@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FXMLPersonneController">
+   <children>
+      <TabPane layoutX="14.0" layoutY="6.0" prefHeight="792.0" prefWidth="983.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Untitled Tab 1">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="231.0" prefWidth="288.0">
+                     <children>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="adduser" layoutX="57.0" layoutY="260.0" mnemonicParsing="false" onAction="#adduser" text="Ajouter" />
+                              <VBox layoutX="14.0" layoutY="15.0" prefHeight="225.0" prefWidth="126.0" spacing="20.0">
+                                 <children>
+                                    <Label text="username" />
+                                    <Label text="email" />
+                                    <Label text="password" />
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="179.0" layoutY="15.0" prefHeight="200.0" prefWidth="149.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="username" />
+                                    <TextField fx:id="email" />
+                                    <TextField fx:id="password" />
+                                 </children>
+                              </VBox>
+                              <Button fx:id="updateuser" layoutX="165.0" layoutY="260.0" mnemonicParsing="false" onAction="#updateuser" text="Modifier" />
+                              <Button fx:id="deleteuser" layoutX="266.0" layoutY="260.0" mnemonicParsing="false" text="Supprimer" />
+                              <TableView layoutX="446.0" layoutY="15.0" prefHeight="277.0" prefWidth="418.0">
+                                 <columns>
+                                    <TableColumn fx:id="colidevent1" prefWidth="110.4000244140625" text="username" />
+                                    <TableColumn fx:id="colidtitre1" prefWidth="79.199951171875" text="email" />
+                                    <TableColumn fx:id="colcontenu1" prefWidth="148.800048828125" text="Contenu" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Untitled Tab 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnajouter" layoutX="57.0" layoutY="260.0" mnemonicParsing="false" onAction="#ajouterpersonne" text="Ajouter" />
+                        <VBox layoutX="14.0" layoutY="15.0" prefHeight="225.0" prefWidth="126.0" spacing="20.0">
+                           <children>
+                              <Label text="Id article" />
+                              <Label text="Id evenemenet" />
+                              <Label text="Titre" />
+                              <Label text="contenu" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="179.0" layoutY="15.0" prefHeight="200.0" prefWidth="149.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="txfidarticle" />
+                              <TextField fx:id="txfnomarticle" />
+                              <TextField fx:id="txftitre" />
+                              <TextField fx:id="txfcontenu" layoutX="10.0" layoutY="61.0" />
+                           </children>
+                        </VBox>
+                        <Button fx:id="btnmodifer" layoutX="165.0" layoutY="260.0" mnemonicParsing="false" onAction="#ajouterpersonne" text="Modifier" />
+                        <Button fx:id="btnsupprimer" layoutX="266.0" layoutY="260.0" mnemonicParsing="false" onAction="#ajouterpersonne" text="Supprimer" />
+                        <TableView layoutX="446.0" layoutY="15.0" prefHeight="277.0" prefWidth="418.0">
+                          <columns>
+                            <TableColumn fx:id="colidarticle" prefWidth="75.0" text="Id article" />
+                            <TableColumn fx:id="colidevent" prefWidth="110.4000244140625" text="Id evenement" />
+                              <TableColumn fx:id="colidtitre" prefWidth="79.199951171875" text="Titre" />
+                              <TableColumn fx:id="colcontenu" prefWidth="148.800048828125" text="Contenu" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
