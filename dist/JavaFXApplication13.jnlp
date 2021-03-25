@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JavaFXApplication13.jnlp">
+  <information>
+    <title>JavaFXApplication13</title>
+    <vendor>starinfo</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JavaFXApplication13.jar" size="6336454" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="JavaFXApplication13" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="javafxapplication13.JavaFXApplication13"  name="JavaFXApplication13" />
+  <update check="always"/>
+</jnlp>
