@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AVISController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" onMouseClicked="#ajouterRating" prefHeight="556.0" prefWidth="894.0" stylesheets="@../values/style.css">
+         <children>
+            <TextField fx:id="txtid_service" layoutX="676.0" layoutY="52.0" visible="false" />
+            <Label layoutX="552.0" layoutY="56.0" text="ID du service choisi " visible="false" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Accordion layoutX="13.0" layoutY="282.0" prefHeight="234.0" prefWidth="344.0" />
+            <TitledPane fx:id="titlepane2" animated="false" layoutX="52.0" layoutY="57.0" prefHeight="339.0" prefWidth="638.0" text="Liste des avis" textFill="#b9190a">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="avis" layoutY="3.0" onMouseClicked="#handleMouseButton1" prefHeight="284.0" prefWidth="580.0">
+                           <columns>
+                              <TableColumn fx:id="colida" prefWidth="75.0" text="ID avis" />
+                              <TableColumn fx:id="colids" prefWidth="75.0" text="ID produit" />
+                              <TableColumn fx:id="colavis" prefWidth="75.0" text="Avis" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <Button fx:id="chart" layoutX="282.0" layoutY="420.0" mnemonicParsing="false" onAction="#charger" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: #959595; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 30px;" text="Statestique Produits" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
