@@ -6,6 +6,7 @@
 package gui;
 
 import Entités.Planning;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.format.DateTimeFormatter;
@@ -89,10 +90,12 @@ public void setData(Planning p, MyListener myListener) throws SQLException {
     }
 
     @FXML
-    private void delete(ActionEvent event) throws SQLException {
+    private void delete(ActionEvent event) throws SQLException, IOException {
         ServicePlanning sp = new ServicePlanning();
         Planning p= new Planning(Integer.parseInt(id.getText()));
         sp.delete(p);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLapp.fxml"));
+          
     }
         
     

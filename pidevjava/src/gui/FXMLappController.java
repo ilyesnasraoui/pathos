@@ -62,24 +62,14 @@ public class FXMLappController implements Initializable {
     private TextField rech;
     @FXML
     private Button btnrech;
-    @FXML
     private TableView<Person> persontab;
-    @FXML
     private TableColumn<Person, String> cfname;
-    @FXML
     private TableColumn<Person, String> clname;
-    @FXML
     private TableColumn<Person, String> cidcard;
-    @FXML
     private TableColumn<Person, String> cusername;
-    @FXML
     private TableColumn<Person, String> cemail;
-    @FXML
     private TableColumn<Person, String> cphone;
-    @FXML
     private TableColumn<Person, String> crole;
-    @FXML
-    private Button test;
     @FXML
     private Label vfname;
     @FXML
@@ -94,82 +84,36 @@ public class FXMLappController implements Initializable {
     private Label vrole;
     private Button delete;
     private Button setadmin;
-    @FXML
     private Button block;
     private Button unblock;
     @FXML
     private Label username;
-    @FXML
-    private Button tt;
     @FXML
     private ScrollPane scrollusers;
     @FXML
     private GridPane gridusers;
     private MyListener myListener;
         private List<Person> persons = new ArrayList<>();
-                private List<Planning> planning = new ArrayList<>();
+        private List<Planning> planning = new ArrayList<>();
 
         private List<SalleAccount> salles = new ArrayList<>();
     
-    @FXML
-   
     private TableView<SalleAccount> salletab;
-    @FXML
     private TableColumn<SalleAccount, String> Susername;
-    @FXML
     private TableColumn<SalleAccount, String> Sname;
-    @FXML
     private TableColumn<SalleAccount, String> Semail;
-    @FXML
     private TableColumn<SalleAccount, String> Sadresse;
-    @FXML
     private TableColumn<SalleAccount, String> Sgovernorate;
-    @FXML
     private TableColumn<SalleAccount, String> Sphone;
-    @FXML
-    private Label Svusername;
-    @FXML
-    private Label svroomname;
-    @FXML
-    private Label Svemail;
-    @FXML
-    private Label Svadresse;
-    @FXML
-    private Label Svgovernorate;
-    @FXML
-    private Label Svphone;
-    @FXML
-    private TextField Srech;
     @FXML
     private ScrollPane scrollsalle;
     @FXML
     private GridPane gridsalle;
     @FXML
     private Tab usertab;
-    @FXML
     private Tab roomtab;
     @FXML
     private Button btnrech1;
-    @FXML
-    private Label vfname1;
-    @FXML
-    private Label vlname1;
-    @FXML
-    private Label vusername1;
-    @FXML
-    private Label vemail1;
-    @FXML
-    private Label vphone1;
-    @FXML
-    private Label vrole1;
-    @FXML
-    private Button delete1;
-    @FXML
-    private Button block1;
-    @FXML
-    private Button unblock1;
-    @FXML
-    private Label username1;
     @FXML
     private TextField rechsalle;
     @FXML
@@ -193,19 +137,15 @@ public class FXMLappController implements Initializable {
     private TextField searchp;
         private String u ;
     @FXML
-    private Button update;
+    private Button test1;
     @FXML
-    private Button changepwd;
+    private ScrollPane scrollplanning1;
     @FXML
-    private TextField fnamefield;
+    private GridPane gridplanning1;
     @FXML
-    private TextField lnamefield;
+    private TextField searchp1;
     @FXML
-    private TextField emailfield;
-    @FXML
-    private HBox phonefield;
-    @FXML
-    private TextField firstnamefield111;
+    private Button btnrech21;
         private void setChosenProfile(Person person) {
         vfname.setText(person.getFname());
         vlname.setText(person.getLname());
@@ -215,6 +155,7 @@ public class FXMLappController implements Initializable {
         
        
     }
+
 public void setinvisible()
 {
     this.tabpane.getTabs().remove(roomtab);
@@ -236,8 +177,9 @@ public void setinvisible()
     @Override
     public void initialize(URL url, ResourceBundle rb) {
      //          tabpane.getTabs().remove(roomtab);
+     //tabpane.getTabs().remove(deleted);
            // setUsername(username.getText());
-
+    this.tabpane.getTabs().remove(roomtab);
 
         
             myListener = new MyListener() {
@@ -250,6 +192,7 @@ public void setinvisible()
         try {
             //  showPerson();
             showusers();
+            showplanning();
             //            showSalle();
         } catch (SQLException ex) {
             Logger.getLogger(FXMLappController.class.getName()).log(Level.SEVERE, null, ex);
@@ -276,7 +219,6 @@ public void setfname(String nom) {
         this.fname.setText(nom);
     }
     
-    @FXML
      public void showPerson() throws SQLException {
          ServicePerson sp= new ServicePerson();
 
@@ -310,7 +252,6 @@ public void setfname(String nom) {
     
     }
 
-    @FXML
     private void fillform(MouseEvent event) throws SQLException {
          Person p = persontab.getSelectionModel().getSelectedItem();
         ServicePerson sp= new ServicePerson();
@@ -338,7 +279,6 @@ public void setfname(String nom) {
         }
         
     }
-    @FXML
     private void searchperson(KeyEvent event) throws SQLException {
         ServicePerson sp= new ServicePerson();
                 
@@ -354,7 +294,6 @@ public void setfname(String nom) {
             persontab.setItems(List);
     }
 
-    @FXML
     private void deleteperson(ActionEvent event) throws SQLException {
         ServicePerson sp= new ServicePerson();
        Person p = persontab.getSelectionModel().getSelectedItem();
@@ -379,7 +318,6 @@ public void setfname(String nom) {
          vrole.setText(""+p.getRole());
     }
 
-    @FXML
     private void block(ActionEvent event) throws SQLException {
         ServiceUser sp= new ServiceUser();
        Person p = persontab.getSelectionModel().getSelectedItem();
@@ -389,7 +327,6 @@ public void setfname(String nom) {
           unblock.setVisible(true);
     }
 
-    @FXML
     private void unblock(ActionEvent event) throws SQLException {
         ServiceUser sp= new ServiceUser();
        Person p = persontab.getSelectionModel().getSelectedItem();
@@ -399,7 +336,6 @@ public void setfname(String nom) {
           unblock.setVisible(false);
     }
 
-    @FXML
     private void getinstance(ActionEvent event) throws SQLException {
         ServicePerson sp= new ServicePerson();
         Person p=sp.getInstance(username.getText());
@@ -412,7 +348,6 @@ public void setfname(String nom) {
         gridplanning.getChildren().clear();
         planning.clear();
         ServicePlanning sp = new ServicePlanning();
-        System.out.print(username.getText());
         planning= sp.read(username.getText());
                 
 
@@ -450,9 +385,54 @@ public void setfname(String nom) {
         
         
     }
+    
+    @FXML
+    public void showplanningu() throws SQLException, IOException{
+
+        gridplanning1.getChildren().clear();
+        planning.clear();
+        ServicePlanning sp = new ServicePlanning();
+        planning= sp.read(username.getText());
+                
+
+         int column = 0;
+        int row = 1;
+        for (int i = 0; i < planning.size(); i++) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("FXMLPlanning.fxml"));
+                AnchorPane anchorPane = fxmlLoader.load();
+                
+                FXMLPlanningController PlanningController = fxmlLoader.getController();
+            MyListener myListener = null;
+                PlanningController.setData(planning.get(i), myListener);
+                if (planning.size() > 0) {
+           // setChosenProfile(persons.get(0));
+            
+        }
+                if (column == 3) {
+                    column = 0;
+                    row++;
+                }
+                
+                gridplanning1.add(anchorPane, column++, row); //(child,column,row)
+                //set grid width
+                gridplanning1.setMinWidth(Region.USE_COMPUTED_SIZE);
+                gridplanning1.setPrefWidth(Region.USE_COMPUTED_SIZE);
+                gridplanning1.setMaxWidth(Region.USE_PREF_SIZE);
+
+                //set grid height
+                gridplanning1.setMinHeight(Region.USE_COMPUTED_SIZE);
+                gridplanning1.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                gridplanning1.setMaxHeight(Region.USE_PREF_SIZE);
+                
+            }
+        
+        
+    }
 
     @FXML
     public void showusers() throws SQLException, IOException{
+        showsalles();
         gridusers.getChildren().clear();
         persons.clear();
         ServicePerson sp = new ServicePerson();
@@ -494,7 +474,6 @@ public void setfname(String nom) {
         
     }
     
-    @FXML
     public void showsalles() throws SQLException, IOException{
         gridusers.getChildren().clear();
         salles.clear();
@@ -690,13 +669,88 @@ public void setfname(String nom) {
     private void tajriba(MouseEvent event) {
     }
 
-    @FXML
     private void cahngepwd(ActionEvent event) {
         tabpane.getSelectionModel().select(roomtab);
     }
 
+
     @FXML
-    private void update(ActionEvent event) {
+    private void searchroomaccount(KeyEvent event) throws SQLException, IOException {
+          gridsalle.getChildren().clear();
+        salles.clear();
+        ServiceSalleAccount sp = new ServiceSalleAccount();
+        salles= sp.searchls(rechsalle.getText());
+         int column = 0;
+        int row = 1;
+        for (int i = 0; i < salles.size(); i++) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("FXMLProfile.fxml"));
+                AnchorPane anchorPane = fxmlLoader.load();
+                
+                FXMLProfileController ProfileController = fxmlLoader.getController();
+            MyListener myListener = null;
+                ProfileController.setData(salles.get(i), myListener);
+                if (salles.size() > 0) {            
+        }
+                if (column == 3) {
+                    column = 0;
+                    row++;
+                }
+                
+                gridsalle.add(anchorPane, column++, row); //(child,column,row)
+                //set grid width
+                gridsalle.setMinWidth(Region.USE_COMPUTED_SIZE);
+                gridsalle.setPrefWidth(Region.USE_COMPUTED_SIZE);
+                gridsalle.setMaxWidth(Region.USE_PREF_SIZE);
+
+                //set grid height
+                gridsalle.setMinHeight(Region.USE_COMPUTED_SIZE);
+                gridsalle.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                gridsalle.setMaxHeight(Region.USE_PREF_SIZE);
+                
+            }
+        
+    }
+
+    @FXML
+    private void roomp(KeyEvent event) throws SQLException, IOException {
+         gridplanning1.getChildren().clear();
+        planning.clear();
+        ServicePlanning sp = new ServicePlanning();
+        planning= sp.searchsingle(searchp1.getText());
+                
+
+         int column = 0;
+        int row = 1;
+        for (int i = 0; i < planning.size(); i++) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("FXMLPlanning.fxml"));
+                AnchorPane anchorPane = fxmlLoader.load();
+                
+                FXMLPlanningController PlanningController = fxmlLoader.getController();
+            MyListener myListener = null;
+                PlanningController.setData(planning.get(i), myListener);
+                if (planning.size() > 0) {
+           // setChosenProfile(persons.get(0));
+            
+        }
+                if (column == 3) {
+                    column = 0;
+                    row++;
+                }
+                
+                gridplanning1.add(anchorPane, column++, row); //(child,column,row)
+                //set grid width
+                gridplanning1.setMinWidth(Region.USE_COMPUTED_SIZE);
+                gridplanning1.setPrefWidth(Region.USE_COMPUTED_SIZE);
+                gridplanning1.setMaxWidth(Region.USE_PREF_SIZE);
+
+                //set grid height
+                gridplanning1.setMinHeight(Region.USE_COMPUTED_SIZE);
+                gridplanning1.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                gridplanning1.setMaxHeight(Region.USE_PREF_SIZE);
+                
+            }
     }
     
 }

@@ -100,6 +100,62 @@ lsa.add(Sa);
        return (lsa);
 
     }
+ 
+  public List<SalleAccount>  searchls(String x) throws SQLException{
+      List<SalleAccount> lsa = FXCollections.observableArrayList();
+
+    Statement st = cnx.createStatement();
+    String req = "select * from salle";
+    ResultSet rs = st.executeQuery(req);
+     int i=0;
+    while(rs.next()){
+        i++;
+        Statement stt = cnx.createStatement();
+    String req1 = "select id_user,id_salle,username,email,phone from users where ((id_salle="+rs.getInt("id_salle")+") and ((username like '%"+x+"%')))";
+    ResultSet rs1 = stt.executeQuery(req1);
+   
+        int id = rs.getInt("id_salle");
+
+        String name = rs.getString(2);
+
+        String governorate = rs.getString(3);
+        String adress = rs.getString(4);
+        String username="";
+        String email="";
+        String phone="";
+        int idu=0;
+        SalleAccount Sa= new SalleAccount();
+        while(rs1.next())
+        { 
+          username=rs1.getString("username");
+          email=rs1.getString("email");
+
+          phone=rs1.getString("phone");
+          idu=rs1.getInt("id_user");
+         // SalleAccount sa= new SalleAccount(idu,0,username,"",email,"salle",phone);
+        //  SalleAccount Sa= new SalleAccount(id,phone,name,governorate,adress,0,username,"",email,"salle");
+          Sa.setId(id); 
+          Sa.setEmail(email);
+          Sa.setGovernorate(governorate);
+          Sa.setAdress(adress);
+          Sa.setUsername(username);
+          Sa.setName(name);
+          Sa.setId_salle(0);
+          Sa.setPhone(phone);
+          Sa.setUsername(username);
+          Sa.setRole("salle");
+          
+        }
+      if(!"".equals(username))
+lsa.add(Sa);
+        
+  
+    }
+       return (lsa);
+
+    }
+ 
+ 
  public List<SalleAccount>  readls() throws SQLException{
          List<SalleAccount> lsa = FXCollections.observableArrayList();
 
@@ -148,7 +204,6 @@ lsa.add(Sa);
         
   
     }
-  System.out.print(lsa);
        return (lsa);
 
     }
