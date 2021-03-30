@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="370.0" prefWidth="250.0" style="-fx-background-color: #454140; -fx-background-radius: 20;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.EventmenttController">
+    <stylesheets>
+        <URL value="@eventmentt.css" />
+    </stylesheets>
+   <children>
+      <VBox layoutX="64.0" layoutY="14.0" prefHeight="158.0" prefWidth="131.0">
+         <children>
+            <ImageView fx:id="imgev" fitHeight="136.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/123767864_2798042983848952_8092616080645024622_o%20-%20Copie.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <Label layoutX="24.0" layoutY="167.0" text="Name" textFill="#e8e8e8" />
+      <Label layoutX="24.0" layoutY="199.0" text="Date" textFill="WHITE" />
+      <Label layoutX="24.0" layoutY="223.0" text="Duree" textFill="WHITE" />
+      <Label layoutX="23.0" layoutY="247.0" text="Description" textFill="WHITE" />
+      <Label fx:id="nameev" layoutX="125.0" layoutY="170.0" text="Label" textFill="#fafafa" />
+      <Label fx:id="dateev" layoutX="125.0" layoutY="199.0" text="Label" textFill="WHITE" />
+      <Label fx:id="dureeev" layoutX="125.0" layoutY="226.0" text="Label" textFill="WHITE" />
+      <TextArea fx:id="descev" layoutX="113.0" layoutY="253.0" prefHeight="82.0" prefWidth="106.0" />
+      <Label layoutX="166.0" layoutY="226.0" text="min" textFill="WHITE" />
+      <Button fx:id="fasakh" layoutX="28.0" layoutY="335.0" mnemonicParsing="false" text="supprimer" />
+      <Label fx:id="ididid" layoutX="23.0" layoutY="119.0" text="Label" />
+   </children>
+</AnchorPane>
