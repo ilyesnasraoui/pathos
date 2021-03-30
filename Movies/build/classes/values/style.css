@@ -63,3 +63,22 @@
 .film-Name-Lable{
     font-family: "Lucida Console", "Courier New", monospace;
 }
+
+.fruity{
+    font-family: "Friday13 Bonus NFI";
+    background-color: #FF005C;
+}
+
+.boxy{
+    -fx-border-color:  #FBB03B;
+    -fx-border-width: 10;
+ 
+}
+
+.letters{
+     
+    
+   
+    
+}
+

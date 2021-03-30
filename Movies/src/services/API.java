@@ -16,6 +16,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import java.io.IOException;
+import static java.lang.Float.parseFloat;
 import static java.lang.Integer.parseInt;
 
 import java.net.HttpURLConnection;
@@ -52,9 +53,12 @@ public class API {
         int duree = 120;
       String image="https://image.tmdb.org/t/p/w500"+ movies.get(0).getAsJsonObject().get("poster_path").toString();
         String desc = movies.get(0).getAsJsonObject().get("overview").toString();
-        Movie m = new Movie(idFilm, duree, idCat, nom, language, image, desc); 
+        String utube = "frefer";
+        String date = movies.get(0).getAsJsonObject().get("original_title").toString();
+        float rated = parseFloat(movies.get(0).getAsJsonObject().get("vote_average").toString());
+        Movie m = new Movie(idFilm, duree, idCat, nom, language, image, desc,utube,date,rated); 
 
-              
+              //Movie(int idFilm, int duree, int idCat, String nom, String lang, String imgUrl, String desc,String utube,String date,int rated)
       }
 
 
@@ -108,8 +112,12 @@ String json = gson.toJson(jsonObject.get("results"));
        String imageName =movies.get(i).getAsJsonObject().get("poster_path").toString();
       String image="https://image.tmdb.org/t/p/w500" + imageName.substring( 1, imageName.length() - 1 ) ;
       System.out.println(image);
+      String utube = "regerg";
+        String date = movies.get(i).getAsJsonObject().get("release_date").toString();
+        System.out.println(date);
+        float rated = parseFloat(movies.get(i).getAsJsonObject().get("vote_average").toString());
         String desc = movies.get(i).getAsJsonObject().get("overview").toString();
-        Movie m = new Movie(idFilm, duree, idCat, nom, language, image, desc); 
+        Movie m = new Movie(idFilm, duree, idCat, nom, language, image, desc,utube,date,rated); 
         lss.add(m);
       
     }

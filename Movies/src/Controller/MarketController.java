@@ -92,6 +92,12 @@ public class MarketController implements Initializable {
     private Button btnUpdate;
     @FXML
     private Button btnDelete;
+    @FXML
+    private TextField tflink;
+    @FXML
+    private TextField tfdate;
+    @FXML
+    private TextField tfrated;
     
     
     private void setChosenMovie(Movie movie) {
@@ -107,11 +113,15 @@ public class MarketController implements Initializable {
         tfDesc.setText(movie.getDesc());
         tfLang.setText(movie.getLang());
         tfRuntime.setText(String.valueOf(movie.getDuree())); //Integer.parseInt(movie.getDuree())
+        tflink.setText(movie.getUtube());
+        tfdate.setText(String.valueOf(movie.getDate()));
+        tfrated.setText(String.valueOf(movie.getRated()));
+        System.out.println(movie.getRated());
         
         filmImg.setImage(image);
         
-        chosenFilmCard.setStyle("-fx-background-color: #d64161 ;\n"
-                + "    -fx-background-radius: 30;");
+//        chosenFilmCard.setStyle("-fx-background-color: #d64161 ;\n"
+           //     + "    -fx-background-radius: 30;");
     }
     
     @Override

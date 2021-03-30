@@ -8,8 +8,37 @@ package model;
 
 public class Movie {
     private int idFilm,duree,idCat;
-    private String nom, lang,imgUrl,desc;
+    private float rated;
+    private String nom, lang,imgUrl,desc,utube,date;
 
+    public float getRated() {
+        return rated;
+    }
+
+    public void setRated(int rated) {
+        this.rated = rated;
+    }
+
+    public String getUtube() {
+        return utube;
+    }
+
+    public void setUtube(String utube) {
+        this.utube = utube;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    
+    
+    
+    
     public int getIdFilm() {
         return idFilm;
     }
@@ -66,6 +95,19 @@ public class Movie {
         this.desc = desc;
     }
 
+    public Movie(int idFilm, int duree, int idCat, String nom, String lang, String imgUrl, String desc,String utube,String date,float rated) {
+        this.idFilm = idFilm;
+        this.duree = duree;
+        this.idCat = idCat;
+        this.nom = nom;
+        this.lang = lang;
+        this.imgUrl = imgUrl;
+        this.desc = desc;
+        this.utube=utube;
+        this.date=date;
+        this.rated=rated;
+    }
+    
     public Movie(int idFilm, int duree, int idCat, String nom, String lang, String imgUrl, String desc) {
         this.idFilm = idFilm;
         this.duree = duree;
@@ -74,6 +116,7 @@ public class Movie {
         this.lang = lang;
         this.imgUrl = imgUrl;
         this.desc = desc;
+        
     }
     
 
@@ -82,18 +125,13 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(int id, String nom, String lang,String url) {
-        this.idFilm = id;
-        this.nom = nom;
-        this.lang = lang;
-        this.imgUrl=url;
-    }
+    
 
     @Override
     public String toString() {
-        return "Movie{" + "id=" + idFilm + ", nom=" + nom + ", lang=" + lang + ", desc=" + desc +", imgurl=" + imgUrl +'}';
-    }
+        return "Movie{id=" + idFilm + ", nom=" + nom + ", lang=" + lang + ", desc=" + desc +", imgurl=" + imgUrl +",utube=" + utube +", date=" + date +", rated=" + rated +"}";
+    }}
     
     
 
-}
+
