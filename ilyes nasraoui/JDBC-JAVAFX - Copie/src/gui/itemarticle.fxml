@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="353.0" prefWidth="242.0" style="-fx-background-color: #000000; -fx-border-radius: 15; -fx-background-radius: 20;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="gui.ItemarticleController">
+   <children>
+      <Label fx:id="titretitre" layoutX="107.0" layoutY="55.0" text="bla" textFill="#848484">
+         <font>
+            <Font name="Cambria Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="contenucontenu" layoutX="21.0" layoutY="93.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 15;" />
+      <Label layoutX="176.0" layoutY="13.0" text="30/03/2021" textFill="WHITE" />
+      <Label layoutX="152.0" layoutY="314.0" text="Ilyes nasraoui   Filmouk" textFill="WHITE">
+         <font>
+            <Font size="8.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="65.0" fitWidth="115.0" layoutX="-34.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

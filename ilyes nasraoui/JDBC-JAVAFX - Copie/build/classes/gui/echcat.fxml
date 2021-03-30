@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="309.0" prefWidth="220.0" style="-fx-background-radius: 20; -fx-background-color: #848484;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.EchcatController">
+    <stylesheets>
+        <URL value="@echcat.css" />
+    </stylesheets>
+   <children>
+      <Label fx:id="nommcatt" layoutX="55.0" layoutY="29.0" text="nom categorie">
+         <font>
+            <Font name="Cambria Bold" size="18.0" />
+         </font></Label>
+      <TextArea fx:id="dessc" layoutX="32.0" layoutY="68.0" prefHeight="200.0" prefWidth="158.0" />
+   </children>
+</AnchorPane>
