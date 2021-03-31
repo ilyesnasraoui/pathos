@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?fxml version="1.0" encoding="UTF-8"?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane onMousePressed="#click" prefHeight="345.0" prefWidth="224.0" style="-fx-background-color: #000000;" stylesheets="@../values/style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ItemController">
+   <children>
+      <Label fx:id="priceLable" layoutX="-31.0" layoutY="52.0" prefHeight="43.0" prefWidth="84.0" text="\\$0.99" visible="false">
+         <font>
+            <Font name="Cambria Bold" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="img" fitHeight="338.0" fitWidth="230.0" layoutX="1.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/john.jpg" />
+         </image>
+         <effect>
+            <Blend />
+         </effect>
+      </ImageView>
+      <HBox layoutX="-5.0" layoutY="366.0">
+         <children>
+            <Label fx:id="nameLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="151.0" text="    Cherry" textAlignment="CENTER" textFill="#aaaaaa">
+               <font>
+                  <Font name="Impact" size="21.0" />
+               </font>
+            </Label>
+            <Text fill="#ffcd18" strokeType="OUTSIDE" strokeWidth="0.0" text="IMDB" textAlignment="CENTER" underline="true" wrappingWidth="59.44451904296875">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+   </children>
+   <styleClass>
+      <String fx:value="fruit-item" />
+      <String fx:value="shadow" />
+   </styleClass>
+</AnchorPane>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="843.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MarketController">
+   <children>
+      <BorderPane layoutX="6.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="867.0" prefWidth="656.0" style="-fx-border-color: #FBB03B;" styleClass="boxy" stylesheets="@../values/style.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <HBox>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="198.13671493530273" />
+                        <ImageView fitHeight="164.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/C:/Users/elyes/Desktop/logo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="62.40002131462097" />
+                  <HBox alignment="CENTER" prefHeight="59.0" prefWidth="595.0" stylesheets="@../values/style.css" VBox.vgrow="NEVER">
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                     <children>
+                        <TextField fx:id="rech" onAction="#onEnter" prefHeight="40.0" prefWidth="235.0" promptText="Type here to search" styleClass="transparent" stylesheets="@../values/style.css">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Cambria" size="18.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="btnrech" mnemonicParsing="false" onAction="#searchMovies" prefHeight="40.0" prefWidth="100.0" styleClass="search-button" stylesheets="@../values/style.css" text="Search" textFill="WHITE" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="search-box" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </HBox>
+                  <VBox prefHeight="691.0" prefWidth="555.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="1.0" />
+                        <HBox prefHeight="330.0" prefWidth="635.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="123.7367000579834" />
+                              <VBox prefHeight="286.0" prefWidth="422.0" stylesheets="@../values/style.css">
+                                 <children>
+                                    <Label fx:id="filmNameLable" alignment="CENTER" contentDisplay="CENTER" prefHeight="54.0" prefWidth="478.0" styleClass="letters" stylesheets="@../values/style.css" text="Movie title can be long" textAlignment="CENTER" textFill="#ed1a5d" wrapText="true">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets right="20.0" />
+                                       </padding>
+                                       <font>
+                                          <Font name="Berlin Sans FB Demi Bold" size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="1.0" />
+                                    <HBox prefHeight="255.0" prefWidth="422.0">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="59.73672294616699" />
+                                          <Pane prefHeight="238.0" prefWidth="266.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0b1d2e" height="267.0" layoutX="45.0" layoutY="-15.0" stroke="BLACK" strokeType="INSIDE" width="177.0" />
+                                                <ImageView fx:id="filmImg" fitHeight="263.0" fitWidth="158.0" layoutX="55.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true" styleClass="fruit-item">
+                                                   <image>
+                                                      <Image url="@../img/arrival-f-poster-gallery.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Pane prefHeight="226.0" prefWidth="656.0">
+                           <children>
+                              <TextField id="boxy" fx:id="tfIdFilm" layoutX="120.0" layoutY="8.0" opacity="0.61" prefHeight="26.0" prefWidth="137.0" stylesheets="file:/C:/Users/elyes/Desktop/Movies%20(1)/Movies/src/values/style.css" />
+                              <TextField id="boxy" fx:id="tfName" layoutX="449.0" layoutY="11.0" opacity="0.61" prefHeight="27.0" prefWidth="140.0" promptText="Name" stylesheets="file:/C:/Users/elyes/Desktop/Movies%20(1)/Movies/src/values/style.css" />
+                              <TextField id="boxy" fx:id="tfRuntime" layoutX="450.0" layoutY="79.0" opacity="0.61" prefHeight="28.0" prefWidth="141.0" stylesheets="file:/C:/Users/elyes/Desktop/Movies%20(1)/Movies/src/values/style.css" />
+                              <Label layoutX="313.0" layoutY="8.0" prefHeight="34.0" prefWidth="123.0" styleClass="fruity" stylesheets="file:/C:/Users/elyes/Desktop/Movies%20(1)/Movies/src/values/style.css" text="Name" textFill="#464243">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="8.0" layoutY="40.0" prefHeight="23.0" prefWidth="107.0" styleClass="fruity" stylesheets="file:/C:/Users/elyes/Desktop/Movies%20(1)/Movies/src/values/style.css" text="Image" textFill="#464243">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="boxy" fx:id="tfDesc" layoutX="448.0" layoutY="45.0" opacity="0.61" prefHeight="26.0" prefWidth="141.0" stylesheets="file:/C:/Users/elyes/Desktop/Movies%20(1)/Movies/src/values/style.css" />
+                              <Label layoutX="9.0" layoutY="2.0" prefHeight="30.0" prefWidth="114.0" styleClass="fruity" stylesheets="file:/C:/Users/elyes/Desktop/Movies%20(1)/Movies/src/values/style.css" text="ID Film" textFill="#464243">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="6.0" layoutY="83.0" prefHeight="22.0" prefWidth="116.0" styleClass="fruity" stylesheets="file:/C:/Users/elyes/Desktop/Movies%20(1)/Movies/src/values/style.css" text="Language" textFill="#464243">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="312.0" layoutY="40.0" prefHeight="39.0" prefWidth="124.0" styleClass="fruity" stylesheets="@../values/style.css" text="Description" textFill="#464243">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="boxy" fx:id="tfLang" layoutX="118.0" layoutY="83.0" opacity="0.61" prefHeight="32.0" prefWidth="143.0" stylesheets="file:/C:/Users/elyes/Desktop/Movies%20(1)/Movies/src/values/style.css" />
+                              <Label layoutX="312.0" layoutY="78.0" prefHeight="33.0" prefWidth="97.0" styleClass="fruity" stylesheets="file:/C:/Users/elyes/Desktop/Movies%20(1)/Movies/src/values/style.css" text="Runtime" textFill="#464243">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="307.0" layoutY="145.0" prefHeight="31.0" prefWidth="129.0" styleClass="fruity" stylesheets="file:/C:/Users/elyes/Desktop/Movies%20(1)/Movies/src/values/style.css" text="Category" textFill="#464243">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="tfCat" layoutX="450.0" layoutY="155.0" prefHeight="25.0" prefWidth="116.0" promptText="fgv" />
+                              <Button fx:id="btnInsertImage" layoutX="120.0" layoutY="45.0" mnemonicParsing="false" onAction="#uploadImage" opacity="0.62" prefHeight="29.0" prefWidth="137.0" text="Insert image" />
+                              <TextField id="boxy" fx:id="tflink" layoutX="117.0" layoutY="125.0" opacity="0.61" prefHeight="30.0" prefWidth="144.0" stylesheets="file:/C:/Users/elyes/Desktop/Movies%20(1)/Movies/src/values/style.css" />
+                              <Label layoutX="6.0" layoutY="124.0" prefHeight="31.0" prefWidth="112.0" styleClass="fruity" stylesheets="file:/C:/Users/elyes/Desktop/Movies%20(1)/Movies/src/values/style.css" text="Trailer" textFill="#464243">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="boxy" fx:id="tfdate" layoutX="449.0" layoutY="115.0" opacity="0.61" prefHeight="28.0" prefWidth="143.0" stylesheets="file:/C:/Users/elyes/Desktop/Movies%20(1)/Movies/src/values/style.css" />
+                              <Label layoutX="312.0" layoutY="114.0" prefHeight="31.0" prefWidth="112.0" styleClass="fruity" stylesheets="file:/C:/Users/elyes/Desktop/Movies%20(1)/Movies/src/values/style.css" text="R-Date" textFill="#464243">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="boxy" fx:id="tfrated" layoutX="117.0" layoutY="167.0" opacity="0.61" prefHeight="32.0" prefWidth="143.0" stylesheets="file:/C:/Users/elyes/Desktop/Movies%20(1)/Movies/src/values/style.css" />
+                              <Label layoutX="8.0" layoutY="167.0" prefHeight="31.0" prefWidth="112.0" styleClass="fruity" stylesheets="file:/C:/Users/elyes/Desktop/Movies%20(1)/Movies/src/values/style.css" text="Rating" textFill="#464243">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Text layoutX="119.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                              <HBox layoutX="267.0" layoutY="188.0" prefHeight="31.0" prefWidth="367.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="27.736669540405273" />
+                                    <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#updateMovie" prefHeight="31.0" prefWidth="95.0" styleClass="add-btn" stylesheets="@../values/style.css" text="Update" textFill="#828282">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="24.5367431640625" />
+                                    <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#addMovie" prefHeight="31.0" prefWidth="99.0" styleClass="add-btn" stylesheets="@../values/style.css" text="Add" textAlignment="CENTER" textFill="#828282">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="22.936704635620117" />
+                                    <Button fx:id="btnDelete" contentDisplay="CENTER" mnemonicParsing="false" onAction="#deleteMovie" prefHeight="31.0" prefWidth="90.0" styleClass="add-btn" stylesheets="@../values/style.css" text="Delete" textAlignment="CENTER" textFill="#828282">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </Pane>
+                     </children>
+                  </VBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="810.0" prefWidth="702.0" styleClass="boxy2" stylesheets="@../values/style.css" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="65.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <Pane prefHeight="65.0" prefWidth="393.0" HBox.hgrow="ALWAYS" />
+                        <Label prefHeight="62.0" prefWidth="100.0" text="My Account" textFill="#878787">
+                           <font>
+                              <Font name="Cambria" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="50.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/ic_cart.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="380.0" styleClass="free-delivery-card" stylesheets="@../values/style.css">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="214.0">
+                                 <children>
+                                    <Label prefHeight="29.0" prefWidth="190.0" text="Movies" textFill="#878787">
+                                       <font>
+                                          <Font name="Cambria Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="16.0" prefWidth="190.0" text="2021" textFill="#878787">
+                                       <font>
+                                          <Font name="Cambria" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <ImageView fitHeight="49.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/ic_delivery.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <Pane prefHeight="84.0" prefWidth="96.0" HBox.hgrow="ALWAYS" />
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="336.0" styleClass="shopping-online-card" stylesheets="@../values/style.css">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="203.0">
+                                 <children>
+                                    <Label prefHeight="29.0" prefWidth="190.0" text="Want more ?" textFill="#878787">
+                                       <font>
+                                          <Font name="Cambria Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="20.0" prefWidth="207.0" text="try premium" textFill="#878787">
+                                       <font>
+                                          <Font name="Cambria" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <ImageView fitHeight="49.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/ic_stopwatch.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <Pane prefHeight="84.0" prefWidth="96.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ScrollPane fx:id="scroll" prefHeight="570.0" prefWidth="785.0" styleClass="transparent" stylesheets="@../values/style.css">
+                           <content>
+                              <GridPane fx:id="grid" prefHeight="0.0" prefWidth="0.0">
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </content>
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </ScrollPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
